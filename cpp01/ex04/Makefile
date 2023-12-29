@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 11:37:46 by msulc             #+#    #+#              #
-#    Updated: 2023/12/28 14:30:41 by msulc            ###   ########.fr        #
+#    Updated: 2023/12/29 14:40:18 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ $(NAME): $(OBJ)
 	@echo "\033[1J\033[1;1H"
 	@echo "$(BOLD)Program is ready!$(NC)"
 	@sleep 0.5
-	@echo "$(BOLD)Just type: ./violence$(NC)"
+	@echo "$(BOLD)Just type: ./textinfile + 3 arguments - file name / sentence n.1 / sentence n.2$(NC)"
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
