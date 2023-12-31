@@ -14,27 +14,30 @@
 #include <iostream>
 #include <fstream>
 #include <istream>
+#include <cstring>
 
 
 int main(int ac, char **av)
 {
-    (void)ac;
+    if(ac != 4)
+    {
+        return (std::cout << "Wrong number of arguments!" << std::endl,
+        std::cout << " --> [./textinfile] [filename] [s1] [s2] <-- " << std::endl, 1);
+    }
     int i = 0;
     std::string one(av[2]);
     std::string two(av[3]);
     std::string outfile(av[1]);
+    std::ifstream ifs(av[1]);
+    // return(std::cout << "Error" std::endl, 1);
+    if(errno != 0)
+        return (std::cout << "Error: File: \"" << av[1] << "\" doesn't exists." << std::endl, 1);
     outfile = outfile + ".replace";
-    std::cout << "new file name: " << outfile << std::endl;
     std::ofstream out(outfile.c_str());
     
-    std::cout << one << " mezera " << two << std::endl;
     
-    std::ifstream ifs(av[1]);
     std::string content( (std::istreambuf_iterator<char>(ifs) ),
                        (std::istreambuf_iterator<char>()    ) );
-    
-    std::cout << "text: " << std::endl;
-    std::cout << content << std::endl;
 
     while(i != -1)
     {
@@ -44,7 +47,6 @@ int main(int ac, char **av)
         content.erase(i, one.length());
         content.insert(i, two);
     }
-    std::cout << i << std::endl;
     out << content;
     out.close();
     return 0;
