@@ -6,17 +6,17 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:28:29 by msulc             #+#    #+#             */
-/*   Updated: 2023/12/29 10:51:09 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/05 10:32:05 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
 
-/*HumanB::HumanB()
+HumanB::HumanB()
 {
     return;
-}*/
+}
 
 HumanB::HumanB(std::string name)
 {

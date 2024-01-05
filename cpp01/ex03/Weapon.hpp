@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:26:52 by msulc             #+#    #+#             */
-/*   Updated: 2023/12/29 09:53:08 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/05 10:57:25 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     Weapon(std::string type);
     ~Weapon();
     void    setType(std::string type);
-    std::string& getType(void);
+    const std::string& getType(void);
 
 };
 
