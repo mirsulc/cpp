@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:16:11 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/12 13:22:57 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/16 13:41:56 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 #include <iostream>
 #include <cmath>
+
 
 class Fixed
 {
@@ -47,8 +48,8 @@ public:
 
     Fixed &operator++(void);
     Fixed &operator--(void);
-    Fixed operator++(int value);
-    Fixed operator--(int value);
+    Fixed operator++(int);
+    Fixed operator--(int);
     
     static Fixed &min(Fixed &v1, Fixed &v2);
     static Fixed &max(Fixed &v1, Fixed &v2);

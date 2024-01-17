@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:36:31 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/12 15:11:14 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/16 13:58:18 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed() : _value(0)
 Fixed::Fixed(const int value)
 {
     //std::cout << "Int constructor called" << std::endl;
-    this->_value = value << this->_fractBits;
+    _value = value << _fractBits;
     //this->_value = value * 256; //    je mozna jak tato varianta, tak ta vyse, a to proto, ze 2 na 8(_fractalBits) = 256
 }
 
@@ -114,52 +114,52 @@ Fixed Fixed::operator+(Fixed const &comp)
 {
     Fixed res;
     res.setRawBits(this->getRawBits() + comp.getRawBits());
-    return res.toFloat();
+    return res;
 }
 Fixed Fixed::operator-(Fixed const &comp)
 {
     Fixed res;
     res.setRawBits(this->getRawBits() - comp.getRawBits());
-    return res.toFloat();
+    return res;
 }
 Fixed Fixed::operator*(Fixed const &comp)
 {
     Fixed res;
-    res.setRawBits(this->getRawBits() * comp.getRawBits());
-    return res.toFloat() / 256 ;
+    //res.setRawBits(this->getRawBits() * comp.getRawBits());
+    res._value = (_value * comp._value) / 256;
+    return res;
 }
 Fixed Fixed::operator/(Fixed const &comp)
 {
     if (comp.toFloat() == 0)
 		return this->toFloat();
 	Fixed res(this->toFloat() / comp.toFloat());
-	return (res);
+	return res;
 }
 
 // ----------------------------------------------------------------------------
 
 Fixed &Fixed::operator++(void) //prefix++
 {
-    this->setRawBits(this->getRawBits() + 1);
+    _value++;
     return (*this);
-    //return (*this);
 }
 Fixed &Fixed::operator--(void) //prefix--
 {
-    this->setRawBits(this->getRawBits() + 1);
+    _value--;
     return (*this);
 }
-Fixed Fixed::operator++(int value) // ++postfix
+Fixed Fixed::operator++(int) // ++postfix
 {
-    Fixed temp(*this);
-	this->setRawBits(this->getRawBits() + value);
-	return (temp);
+    Fixed temp = *this;
+	++*this;
+	return temp;
 }
-Fixed Fixed::operator--(int value) // --postfix
+Fixed Fixed::operator--(int) // --postfix
 {
-    Fixed temp(*this);
-	this->setRawBits(this->getRawBits() - value);
-	return (temp);
+    Fixed temp = *this;
+    --*this;
+	return temp;
 }
 
 // ----------------------------------------------------------------------------
