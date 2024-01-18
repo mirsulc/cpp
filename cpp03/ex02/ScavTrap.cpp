@@ -61,6 +61,8 @@ ScavTrap::~ScavTrap()
     std::cout << BOLD "ScavTrap destructor called" NC << std::endl;
 }
 
+//------------------------------------------------- METHODS
+
 void ScavTrap::guardGate(void)
 {
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
