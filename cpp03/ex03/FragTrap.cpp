@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 10:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/18 13:52:47 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/19 08:35:28 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ FragTrap::FragTrap(std::string nm) : ClapTrap(nm)
     this->_hitPoints = 100;
     this->_energyPoints = 100;
     this->_attackDemage = 30;
-    std::cout << BOLD "FragTrap name constructor called" NC << std::endl;
+    std::cout << BOLD "FragTrap name: " << _name << " constructor called" NC << std::endl;
 }
 
 
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
-    std::cout << BOLD "FragTrap copy constructor called" NC << std::endl;
+    std::cout << BOLD "FragTrap: " << _name << " copy constructor called" NC << std::endl;
     if (this != &src)
     {
         _name = src._name;
@@ -46,7 +46,7 @@ FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 
 FragTrap &FragTrap::operator=(const FragTrap &src)
 {
-    std::cout << BOLD "FragTrap copy assignment operator called" NC << std::endl;
+    std::cout << BOLD "FragTrap: " << _name << " copy assignment operator called" NC << std::endl;
     if (this != &src)
     {
         _name = src._name;

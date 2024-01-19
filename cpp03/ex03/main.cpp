@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:07 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/18 13:55:56 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/19 09:06:51 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int     main()
     DiamondTrap a(jmeno);
     a.getStatistics();
 
-    DiamondTrap b;
-    b = a;
+    DiamondTrap b(a);
     b.setName("Jules");
     b.getStatistics();
     

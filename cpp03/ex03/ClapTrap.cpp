@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:18:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/18 13:52:01 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/19 09:00:39 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ ClapTrap::ClapTrap(std::string nm) : _name(nm)
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDemage = 0;
-    std::cout << BOLD "ClapTrap name constructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap name: " << _name << " constructor called" NC << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
-    std::cout << BOLD "ClapTrap copy constructor called" NC << std::endl;
     if (this != &src)
     {
         _name = src._name;
@@ -40,11 +39,11 @@ ClapTrap::ClapTrap(const ClapTrap &src)
         _energyPoints = src._energyPoints;
         _attackDemage = src._attackDemage;
     }
+    std::cout << BOLD "ClapTrap: " << _name << " copy constructor called" NC << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-    std::cout << BOLD "ClapTrap copy assignment operator called" NC << std::endl;
     if (this != &src)
     {
         _name = src._name;
@@ -52,6 +51,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
         _energyPoints = src._energyPoints;
         _attackDemage = src._attackDemage;
     }
+    std::cout << BOLD "ClapTrap: " << _name << " copy assignment operator called" NC << std::endl;
     return (*this);
 }
 ClapTrap::~ClapTrap()
@@ -94,7 +94,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::getStatistics(void) const
 {
-    std::cout << "ClapTrap " << this->_name
+    std::cout << "ClapTrap " << _name
                                     << " has: "
                                     << _hitPoints << " Hit Points,"
                                     << _energyPoints << " Energy Points and "

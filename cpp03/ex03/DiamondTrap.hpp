@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:57:06 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/18 13:53:11 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/19 09:04:12 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ public:
 
     DiamondTrap();
     DiamondTrap(std::string nm);
-    //DiamondTrap(const DiamondTrap &src);
+    DiamondTrap(const DiamondTrap &src);
     DiamondTrap &operator=(const DiamondTrap &src);
     ~DiamondTrap();
 
     void whoAmI();
-    using FragTrap::getStatistics;
+    void getStatistics();
     using ScavTrap::attack;
-    
+    void setName(std::string nm);
 
 };
 

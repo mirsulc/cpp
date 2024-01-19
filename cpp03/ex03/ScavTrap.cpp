@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/18 14:17:09 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/19 08:57:27 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ ScavTrap::ScavTrap(std::string nm) : ClapTrap(nm)
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDemage = 20;
-    std::cout << BOLD "ScavTrap name constructor called" NC << std::endl;
+    std::cout << BOLD "ScavTrap name: " << _name << " constructor called" NC << std::endl;
 }
 
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
-    std::cout << BOLD "ScavTrap copy constructor called" NC << std::endl;
+    std::cout << BOLD "ScavTrap: " << _name << " copy constructor called" NC << std::endl;
     if (this != &src)
     {
         _name = src._name;
@@ -45,7 +45,7 @@ ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
-    std::cout << BOLD "ScavTrap copy assignment operator called" NC << std::endl;
+    std::cout << BOLD "ScavTrap: " << _name << " copy assignment operator called" NC << std::endl;
     if (this != &src)
     {
         _name = src._name;
