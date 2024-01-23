@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 11:37:46 by msulc             #+#    #+#              #
-#    Updated: 2024/01/17 13:39:33 by msulc            ###   ########.fr        #
+#    Updated: 2024/01/22 13:11:42 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ GREEN =	\033[32m
 RED =	\033[31m
 NC =	\033[0m
 
-NAME	=	claptrap
+NAME	=	fragtrap
 
 CC	=	c++
 CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98
@@ -45,7 +45,7 @@ $(NAME): $(OBJ)
 	@echo "\033[1J\033[1;1H"
 	@echo "$(BOLD)Program is ready!$(NC)"
 	@sleep 0.5
-	@echo "$(BOLD)Just type: ./claptrap $(NC)"
+	@echo "$(BOLD)Just type: ./fragtrap $(NC)"
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
