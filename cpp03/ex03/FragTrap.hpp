@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 10:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/18 13:40:02 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/22 13:02:12 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
     FragTrap &operator=(const FragTrap &src);
     ~FragTrap();
 
-    void highFivesGuys(void);
-    void getStatistics(void) const;
+    void highFivesGuys();
+    //void getStatistics(void) const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 10:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/19 08:35:28 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/22 13:02:18 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
     std::cout << BOLD "FragTrap: " << _name << " copy constructor called" NC << std::endl;
     if (this != &src)
     {
-        _name = src._name;
+        _name = this->getName();
         _hitPoints = src._hitPoints;
         _energyPoints = src._energyPoints;
         _attackDemage = src._attackDemage;
@@ -59,16 +59,16 @@ FragTrap &FragTrap::operator=(const FragTrap &src)
 
 FragTrap::~FragTrap()
 {
-    std::cout << BOLD "FragTrap destructor called" NC << std::endl;
+    std::cout << BOLD "FragTrap " << _name << " destructor called" NC << std::endl;
 }
 
 //------------------------------------------------- METHODS
 
-void FragTrap::highFivesGuys(void)
+void FragTrap::highFivesGuys()
 {
     std::cout << "Gimme high five guys! Says FragTrap " << _name << std::endl;
  }
-
+/*
 void FragTrap::getStatistics(void) const
 {
     std::cout << this->_name
@@ -77,4 +77,4 @@ void FragTrap::getStatistics(void) const
                             << _energyPoints << " Energy Points and "
                             << _attackDemage << " Attack points."
                             << std::endl;
-}
+}*/

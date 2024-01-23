@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:18:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/19 09:00:39 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/22 12:29:31 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << BOLD "ClapTrap destructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap " << _name << " destructor called" NC << std::endl;
 }
 
 //------------------------------------------------- METHODS
@@ -94,7 +94,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::getStatistics(void) const
 {
-    std::cout << "ClapTrap " << _name
+    std::cout << _name
                                     << " has: "
                                     << _hitPoints << " Hit Points,"
                                     << _energyPoints << " Energy Points and "

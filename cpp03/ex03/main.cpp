@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:07 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/19 09:06:51 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/22 12:55:26 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@ int     main()
 {
     std::string jmeno = "Karel";
     DiamondTrap a(jmeno);
-    a.getStatistics();
+    std::cout << "a: " << a.getName() << std::endl;;
+    a.getDStatistics();
+    a.whoAmI();
+    a.attack("HisFriend");
+    a.highFivesGuys();
 
     DiamondTrap b(a);
     b.setName("Jules");
-    b.getStatistics();
+    b.getDStatistics();
+    b.whoAmI();
     
     return 0;
 }
