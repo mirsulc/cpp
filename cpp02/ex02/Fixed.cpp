@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:36:31 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/16 13:58:18 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/22 15:00:02 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ bool Fixed::operator!=(Fixed const &comp)
 {
     return(this->getRawBits() != comp.getRawBits());
 }
-
+value++
 // ----------------------------------------------------------------------------
 
 Fixed Fixed::operator+(Fixed const &comp)
