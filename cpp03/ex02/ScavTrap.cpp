@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/17 14:53:26 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 09:53:36 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(std::string nm) : ClapTrap(nm)
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDemage = 20;
-    std::cout << BOLD "ScavTrap name constructor called" NC << std::endl;
+    std::cout << BOLD "ScavTrap name " << _name << " constructor called" NC << std::endl;
 }
 
 
@@ -58,7 +58,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << BOLD "ScavTrap destructor called" NC << std::endl;
+    std::cout << BOLD "ScavTrap " << _name <<" destructor called" NC << std::endl;
 }
 
 //------------------------------------------------- METHODS

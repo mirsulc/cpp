@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:18:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/22 12:29:31 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 15:11:02 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap()
 {
     this->_hitPoints = 10;
     this->_energyPoints = 10;
-    this->_attackDemage = 0;
+    this->_attackDamage = 0;
     std::cout << BOLD "ClapTrap default constructor called" NC << std::endl;
 }
 
@@ -26,31 +26,26 @@ ClapTrap::ClapTrap(std::string nm) : _name(nm)
 {
     this->_hitPoints = 10;
     this->_energyPoints = 10;
-    this->_attackDemage = 0;
-    std::cout << BOLD "ClapTrap name: " << _name << " constructor called" NC << std::endl;
+    this->_attackDamage = 0;
+    std::cout << BOLD "ClapTrap " << "energy: " << _energyPoints << " name: " << _name << " constructor called" NC << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
-    if (this != &src)
-    {
-        _name = src._name;
-        _hitPoints = src._hitPoints;
-        _energyPoints = src._energyPoints;
-        _attackDemage = src._attackDemage;
-    }
+    _name = src._name;
+    _hitPoints = src._hitPoints;
+    _energyPoints = src._energyPoints;
+    _attackDamage = src._attackDamage;
     std::cout << BOLD "ClapTrap: " << _name << " copy constructor called" NC << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-    if (this != &src)
-    {
-        _name = src._name;
-        _hitPoints = src._hitPoints;
-        _energyPoints = src._energyPoints;
-        _attackDemage = src._attackDemage;
-    }
+    _name = src._name;
+    _hitPoints = src._hitPoints;
+    _energyPoints = src._energyPoints;
+    _attackDamage = src._attackDamage;
+
     std::cout << BOLD "ClapTrap: " << _name << " copy assignment operator called" NC << std::endl;
     return (*this);
 }
@@ -65,7 +60,7 @@ void ClapTrap::attack(const std::string& target)
 {
     if(_energyPoints > 0 && _hitPoints > 0)
     {
-        std::cout << _name << " attacked " << target << " who loses " << _attackDemage << " of his Hit Points" << std::endl;
+        std::cout << _name << " attacked " << target << " who loses " << _attackDamage << " of his Hit Points" << std::endl;
         _energyPoints--;
     }
     else
@@ -92,34 +87,39 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << _name << " has no Energy left, so he can't repair himself." << std::endl;
 }
 
+void ClapTrap::setEnergyPoints(unsigned int en)
+{
+    _energyPoints = en;
+}
+
 void ClapTrap::getStatistics(void) const
 {
     std::cout << _name
                                     << " has: "
                                     << _hitPoints << " Hit Points,"
                                     << _energyPoints << " Energy Points and "
-                                    << _attackDemage << " Attack points."
+                                    << _attackDamage << " Attack points."
                                     << std::endl;
 }
 
 std::string ClapTrap::getName() const
 {
-    return _name;
+    return this->_name;
 }
 
 int ClapTrap::getHitPoints() const
 {
-    return _hitPoints;
+    return this->_hitPoints;
 }
 
 int ClapTrap::getEnergyPoints() const
 {
-    return _energyPoints;
+    return this->_energyPoints;
 }
 
-int ClapTrap::getAttackDemage() const
+int ClapTrap::getAttackDamage() const
 {
-    return _attackDemage;
+    return this->_attackDamage;
 }
 
 void    ClapTrap::setName(std::string nm)

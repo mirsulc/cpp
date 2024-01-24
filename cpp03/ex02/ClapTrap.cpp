@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:18:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/17 14:51:46 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 09:53:14 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string nm) : _name(nm)
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDemage = 0;
-    std::cout << BOLD "ClapTrap name constructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap name " << _name << " constructor called" NC << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
@@ -56,7 +56,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << BOLD "ClapTrap destructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap " << _name <<" destructor called" NC << std::endl;
 }
 
 //------------------------------------------------- METHODS

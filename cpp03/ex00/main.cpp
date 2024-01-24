@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:07 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/17 11:01:16 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 09:14:44 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ int     main()
     a.getStatistics();
     b.getStatistics();
     c.getStatistics();
-    // for (int i = 0; i < 40; i++)
-    // {
-    //     a.attack("Boo");
-    // }
     
     
     return 0;

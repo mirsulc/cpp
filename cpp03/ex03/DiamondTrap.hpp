@@ -6,18 +6,17 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:57:06 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/22 13:07:02 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 15:47:06 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : public FragTrap , public ScavTrap
 {
 private:
     std::string _name;
@@ -31,7 +30,8 @@ public:
 
 
     void whoAmI();
-    void getDStatistics() const;
+    //void getDStatistics() const;
+    void getStatistics() const;
     using ScavTrap::attack;
     void setName(std::string nm);
     std::string getName() const;

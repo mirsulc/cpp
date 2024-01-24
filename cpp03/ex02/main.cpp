@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:07 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/17 14:39:49 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 09:52:43 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int     main()
     b.setName("Julius");
     b.getStatistics();
     b.highFivesGuys();
+    a.attack(b.getName());
+    b.takeDamage(a.getAttackDemage());
+    ScavTrap o("Caroline");
 
     
     

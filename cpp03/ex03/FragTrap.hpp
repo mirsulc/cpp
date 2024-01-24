@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 10:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/22 13:02:12 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 14:20:04 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : virtual public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 
 public:
@@ -27,7 +27,7 @@ public:
     ~FragTrap();
 
     void highFivesGuys();
-    //void getStatistics(void) const;
+    
 
 };
 

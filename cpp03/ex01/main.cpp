@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:07 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/17 14:39:49 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 09:57:57 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int     main()
     b.scavGetStatistics();
     ScavTrap c(a);
     c.scavGetStatistics();
+    std::cout << std::endl;
+    c.guardGate();
+    std::cout << std::endl;
     ScavTrap d;
     d = b;
     d.setName("The only one");

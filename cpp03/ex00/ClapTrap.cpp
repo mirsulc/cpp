@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:18:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/17 12:55:50 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 09:16:53 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 }
 ClapTrap::~ClapTrap()
 {
-    std::cout << BOLD "ClapTrap destructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap destructor for: " << _name <<" called" NC << std::endl;
 }
 
 //------------------------------------------------- METHODS

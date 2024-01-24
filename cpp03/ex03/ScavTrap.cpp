@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/22 12:29:50 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/24 15:45:11 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,41 @@
 
 //------------------------------------------------- CONSTRUCTORS
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap()
 {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
-    this->_attackDemage = 20;
+    this->_attackDamage = 20;
     std::cout << BOLD "ScavTrap default constructor called" NC << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string nm) : ClapTrap(nm)
+ScavTrap::ScavTrap(std::string nm)
 {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
-    this->_attackDemage = 20;
+    this->_attackDamage = 20;
+    this->_name = nm;
     std::cout << BOLD "ScavTrap name: " << _name << " constructor called" NC << std::endl;
 }
 
 
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
+ScavTrap::ScavTrap(const ScavTrap &src)
 {
     std::cout << BOLD "ScavTrap: " << _name << " copy constructor called" NC << std::endl;
-    if (this != &src)
-    {
-        _name = src._name;
-        _hitPoints = src._hitPoints;
-        _energyPoints = src._energyPoints;
-        _attackDemage = src._attackDemage;
-    }
+    _name = src._name;
+    _hitPoints = src._hitPoints;
+    _energyPoints = src._energyPoints;
+    _attackDamage = src._attackDamage;
+
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
     std::cout << BOLD "ScavTrap: " << _name << " copy assignment operator called" NC << std::endl;
-    if (this != &src)
-    {
-        _name = src._name;
-        _hitPoints = src._hitPoints;
-        _energyPoints = src._energyPoints;
-        _attackDemage = src._attackDemage;
-    }
+    _name = src._name;
+    _hitPoints = src._hitPoints;
+    _energyPoints = src._energyPoints;
+    _attackDamage = src._attackDamage;
     return (*this);
 }
 
@@ -68,21 +64,31 @@ void ScavTrap::guardGate(void)
     std::cout << "ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
 }
 
-void ScavTrap::scavGetStatistics(void)
+// void ScavTrap::scavGetStatistics(void)
+// {
+//     std::cout << this->_name
+//                                     << " has: "
+//                                     << _hitPoints << " Hit Points,"
+//                                     << _energyPoints << " Energy Points and "
+//                                     << _attackDamage << " Attack points."
+//                                     << std::endl;
+// }
+
+void ScavTrap::getStatistics() const
 {
-    std::cout << this->_name
-                                    << " has: "
-                                    << _hitPoints << " Hit Points,"
-                                    << _energyPoints << " Energy Points and "
-                                    << _attackDemage << " Attack points."
-                                    << std::endl;
+   std::cout << this->_name
+                        << " has: "
+                        << _hitPoints << " Hit Points,"
+                        << _energyPoints << " Energy Points and "
+                        << _attackDamage << " Attack points."
+                        << std::endl; 
 }
 
 void ScavTrap::attack(const std::string& target)
 {
     if(_energyPoints > 0 && _hitPoints > 0)
     {
-        std::cout << "ScavTrap " << _name << " attacked " << target << " who loses " << _attackDemage << " of his Hit Points" << std::endl;
+        std::cout << "ScavTrap " << _name << " attacked " << target << " who loses " << _attackDamage << " of his Hit Points" << std::endl;
         _energyPoints--;
     }
     else
