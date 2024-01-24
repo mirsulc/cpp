@@ -8,7 +8,7 @@ class Dog : public Animal
 public:
     Dog();
     Dog(std::string tp);
-    Dog(const Dog&);
+    Dog(const Dog &src);
     Dog &operator=(const Dog &src);
     ~Dog();
 

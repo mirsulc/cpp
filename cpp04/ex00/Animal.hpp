@@ -19,7 +19,7 @@ public:
 
     std::string getType() const;
     void setType(std::string &tp);
-    virtual void makeSound() const;
+    virtual void makeSound() const; //virtual umozni predefinovat metodu v potomcich
 
 };
 

@@ -8,7 +8,7 @@ Cat::Cat() : Animal("Cat")
     std::cout << "Default cat constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat&)  : Animal("Cat")
+Cat::Cat(const Cat &src)  : Animal(src)
 {
     std::cout << "Copy cat constructor called" << std::endl;
 }
