@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 09:05:46 by msulc             #+#    #+#              #
-#    Updated: 2024/01/23 10:16:33 by msulc            ###   ########.fr        #
+#    Updated: 2024/01/25 10:56:04 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98
 SRC		=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp 
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 

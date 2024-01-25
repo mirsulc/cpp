@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 09:41:39 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/25 09:41:42 by msulc            ###   ########.fr       */
+/*   Created: 2024/01/25 10:56:32 by msulc             #+#    #+#             */
+/*   Updated: 2024/01/25 11:08:59 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
-#include <iostream>
-#include <string>
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-class Animal
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-protected:
-
-    std::string _type;
-    
 public:
+    WrongCat();
+    WrongCat(std::string tp);
+    WrongCat(const WrongCat &src);
+    WrongCat &operator=(const WrongCat &src);
+    ~WrongCat();
 
-    Animal();
-    Animal(std::string tp);
-    Animal(const Animal &src);
-    Animal &operator=(const Animal &src);
-    virtual ~Animal();
-
+    void makeSound() const;
     std::string getType() const;
-    void setType(std::string &tp);
-    virtual void makeSound() const; //virtual umozni predefinovat metodu v potomcich
-
 };
-
-
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/25 09:41:28 by msulc             #+#    #+#             */
+/*   Updated: 2024/01/25 11:19:26 by msulc            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 // ------------------------------------- CONSTRUCTORS
@@ -11,7 +23,7 @@ Animal::Animal()
 Animal::Animal(std::string tp)
 {
     _type = tp;
-    std::cout << "Type animal constructor" << std::endl;
+    std::cout << "Type " << _type << " animal constructor" << std::endl;
 }
 
 Animal::Animal(const Animal &src)
@@ -53,5 +65,5 @@ void Animal::setType(std::string &tp)
 
 void Animal::makeSound() const
 {
-    std::cout << "' Animal sound '" <<std::endl;
+    std::cout << _type << ": ' Animal sound '" <<std::endl;
 }
