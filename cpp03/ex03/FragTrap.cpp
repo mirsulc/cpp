@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 10:18:55 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/24 15:02:09 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/25 09:05:43 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 FragTrap::FragTrap()
 {
     this->_hitPoints = 100;
-    this->_energyPoints = 5; //100
-    this->_attackDamage = 6; //30
+    this->_energyPoints = 100;
+    this->_attackDamage = 30;
     std::cout << BOLD "FragTrap default constructor called" NC << std::endl;
 }
 
 FragTrap::FragTrap(std::string nm)
 {
     this->_hitPoints = 100;
-    this->_energyPoints = 5; //100
-    this->_attackDamage = 6; //30
+    this->_energyPoints = 100;
+    this->_attackDamage = 30;
     this->_name = nm;
     std::cout << BOLD "FragTrap name: " << _name << " constructor called" NC << std::endl;
 }

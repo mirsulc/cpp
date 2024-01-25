@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:18:14 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/24 16:17:48 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/25 09:07:02 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 
 DiamondTrap::DiamondTrap()
 {
-
-    this->setEnergyPoints(ScavTrap::getEnergyPoints());
-    this->_hitPoints = FragTrap::_hitPoints;
-    this->_attackDamage = FragTrap::_attackDamage;
+    FragTrap temp_frag;
+	ScavTrap temp_scav;
+    
+    this->setEnergyPoints(temp_scav.getEnergyPoints());
+    this->_hitPoints = temp_frag.getHitPoints();
+    _attackDamage = temp_frag.getAttackDamage();
+    _name = "default Diamond name";
     std::cout << BOLD "DiamondTrap default constructor called" NC << std::endl;
 }
 
@@ -92,6 +95,5 @@ std::string DiamondTrap::getName() const
 void DiamondTrap::whoAmI()
 {
     std::cout << "My name is: " << _name << " nad my ClapTrap name is: " << ClapTrap::_name << std::endl;
-    std::cout << _energyPoints << " " << _attackDamage << " " << _hitPoints << std::endl;
 }
 

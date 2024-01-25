@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:18:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/24 09:16:53 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/25 09:19:29 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDemage = 0;
-    std::cout << BOLD "ClapTrap default constructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap " << _name <<" default constructor called" NC << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string nm) : _name(nm)
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string nm) : _name(nm)
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDemage = 0;
-    std::cout << BOLD "ClapTrap name constructor called" NC << std::endl;
+    std::cout << BOLD "ClapTrap name " << _name <<" constructor called" NC << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
@@ -69,7 +69,7 @@ void ClapTrap::attack(const std::string& target)
         _energyPoints--;
     }
     else
-        std::cout << _name << " has no Energy left, so he can't attack anyone." << std::endl;
+        std::cout << _name << " has no Energy/Hit points left, so he can't attack anyone." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -85,7 +85,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     if(_energyPoints > 0)
     {
         _hitPoints += amount;
-        std::cout << "ClapTrap " << _name << "'s energy was incresed by: " << amount << " and is now equal to: " << _hitPoints << std::endl;  
+        std::cout << "ClapTrap " << _name << "'s energy was increased by: " << amount << " and is now equal to: " << _hitPoints << std::endl;  
         _energyPoints--;
     }
     else
