@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:41:28 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/25 15:56:18 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 11:58:10 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,32 @@ Animal::Animal(std::string tp)
 
 Animal::Animal(const Animal &src)
 {
-    if(this != &src)
-    {
-        *this = src;
-    }
-    std::cout << "Copy animal constructor called" << std::endl;
-
+    _type = src.getType();
+    std::cout << "Copy " << _type << " animal constructor called" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &src)
 {
     if(this != &src)
     {
-        _type = src._type;
+        _type = src.getType();
+        std::cout << "Copy animal assignment operator called" << std::endl;
+        return *this;
     }
-    std::cout << "Copy animal assignment operator called" << std::endl;
-    return *this;
+    else
+        return *this;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Deafult animal destructor called" << std::endl;
+    std::cout << "Deafult " << _type << "  animal destructor called" << std::endl;
 }
 
 // ------------------------------------- METHODS
 
 std::string Animal::getType() const
 {
+    std::cout << "type of this animal is: " << _type << std::endl; 
     return _type;
 }
 
@@ -69,5 +68,9 @@ void Animal::makeSound() const
 }
 void Animal::getIdeas() const
 {
-    std::cout << "Who am I? I have no idea what I'm doing here..." << std::endl;
+    std::cout << "I'am just an animal" << std::endl;
+}
+void Animal::setIdeas(unsigned int i, std::string idea)
+{
+    std::cout << "I have only " << i << "idea(s), and it's: " << idea << std::endl;
 }

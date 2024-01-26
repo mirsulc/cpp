@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:41:40 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/25 16:10:03 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 13:03:13 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,29 @@ Brain::Brain()
 }
 Brain::Brain(const Brain &src)
 {
-    if(this != &src)
+    for (int i = 0; i < numOfIdeas; i++)
     {
-        *this = src;
+        _ideas[i] = src._ideas[i];
     }
-    std::cout << "Brain copy operator called" << std::endl;
+    std::cout << "Brain copy created" << std::endl;
 }
 
 Brain &Brain::operator=(const Brain &src)
 {
     if(this != &src)
     {
-        *this = src;
+        for (int i = 0; i < numOfIdeas; i++)
+        {
+            _ideas[i] = src._ideas[i];
+        }
         std::cout << "Brain copy assignment operator called" << std::endl;
         return *this;
     }
-    std::cout << "Brain copy assignment operator unsuccesfully called" << std::endl;
-    return *this;
+    else
+    {
+        std::cout << "Brain copy assignment operator unsuccesfully called" << std::endl;
+        return *this;
+    }
 }
 
 
@@ -45,6 +51,7 @@ Brain::~Brain()
 //----------------------------------------methods
 void Brain::setIdeas(unsigned int i, std::string idea)
 {
+    
     unsigned int x = i;
     unsigned int y = 0;
     while(x < (numOfIdeas + i))
@@ -56,6 +63,7 @@ void Brain::setIdeas(unsigned int i, std::string idea)
 }
 void Brain::getIdeas() const
 {
+    std::cout << " ------------------------------- ideas -----------------------" << std::endl;
     for (int i = 0; i < numOfIdeas; i++)
     {
         std::cout << _ideas[i] << " ";

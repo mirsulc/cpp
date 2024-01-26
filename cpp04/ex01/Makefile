@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 09:05:46 by msulc             #+#    #+#              #
-#    Updated: 2024/01/25 14:43:25 by msulc            ###   ########.fr        #
+#    Updated: 2024/01/26 09:24:02 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NC =	\033[0m
 NAME	=	polymorphism
 
 CC	=	c++
-CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98
+CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98 
 
 SRC		=	main.cpp \
 			Animal.cpp \

@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:41:39 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/25 15:54:52 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 11:56:47 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
     void setType(std::string &tp);
     virtual void makeSound() const; //virtual umozni predefinovat metodu v potomcich
     virtual void getIdeas() const;
+    virtual void setIdeas(unsigned int i, std::string idea);
 
 };
 
