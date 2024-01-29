@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 09:41:47 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 15:21:00 by msulc            ###   ########.fr       */
+/*   Created: 2024/01/25 09:42:01 by msulc             #+#    #+#             */
+/*   Updated: 2024/01/26 15:18:41 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
 // ------------------------------------- CONSTRUCTORS
 
-Cat::Cat() : Animal("Cat")
+Dog::Dog() : Animal("Dog")
 {
     _br = new Brain();
-    _br->setIdeas(10, "meow");
-    std::cout << "Default cat constructor called" << std::endl;
+    _br->setIdeas(1, "WOOF");
+    std::cout << "Default Dog constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &src)
+Dog::Dog(const Dog &src)
 {
     _type = src._type;
     _br = new Brain(*src._br);
-    std::cout << "Copy cat constructor called" << std::endl;
+    std::cout << "Copy Dog constructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &src)
+Dog &Dog::operator=(const Dog &src)
 {
     if(this != &src)
     {
@@ -40,30 +40,29 @@ Cat &Cat::operator=(const Cat &src)
     return *this;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-    std::cout << "Deafult cat destructor called" << std::endl;
-    delete (_br);
+    delete(_br);
+    std::cout << "Deafult Dog destructor called" << std::endl;
 }
 
 // ------------------------------------- METHODS
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-    std::cout << _type << ": ' MEOW '" << std::endl;
+    std::cout << _type << ": ' WOOF '" << std::endl;
 }
 
-std::string Cat::getType() const
+std::string Dog::getType() const
 {
     std::cout << "type of this animal is: " << _type << std::endl;
     return _type;
 }
-void Cat::getIdeas() const
+void Dog::getIdeas() const
 {
     _br->getIdeas();
 }
-
-void Cat::setIdeas(unsigned int i, std::string idea) const
+void Dog::setIdeas(unsigned int i, std::string idea) const
 {
     _br->setIdeas(i, idea);
 }

@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:41:28 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 15:30:55 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 15:36:44 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Animal::Animal(std::string tp)
 
 Animal::Animal(const Animal &src)
 {
-    _type = src.getType();
+    _type = src._type;
     std::cout << "Copy " << _type << " animal constructor called" << std::endl;
 }
 
@@ -36,7 +36,7 @@ Animal &Animal::operator=(const Animal &src)
 {
     if(this != &src)
     {
-        _type = src.getType();
+        _type = src._type;
         std::cout << "Copy animal assignment operator called" << std::endl;
         return *this;
     }
@@ -64,15 +64,15 @@ void Animal::setType(std::string &tp)
 
 void Animal::makeSound() const
 {
-    std::cout << _type << ": ' I make no sound, I'm just an animal '" <<std::endl;
+    std::cout << _type << ": ' Animal sound '" <<std::endl;
 }
+
 void Animal::getIdeas() const
 {
-    std::cout << "I'am just an animal, I have no ideas" << std::endl;
+    std::cout << "I'am just an animal" << std::endl;
 }
+
 void Animal::setIdeas(unsigned int i, std::string idea) const
 {
-    (void)i;
-    (void)idea;
-    std::cout << "HAHAHA you can't implement any ideas into my brain HAHAHA " << idea << std::endl;
+    std::cout << "I have only " << i << "idea(s), and it's: " << idea << std::endl;
 }

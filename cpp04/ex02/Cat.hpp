@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 09:42:06 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 15:21:17 by msulc            ###   ########.fr       */
+/*   Created: 2024/01/25 09:41:54 by msulc             #+#    #+#             */
+/*   Updated: 2024/01/26 15:18:24 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 public:
-    Dog();
-    Dog(std::string tp);
-    Dog(const Dog &src);
-    Dog &operator=(const Dog &src);
-    ~Dog();
+    Cat();
+    Cat(std::string tp);
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &src);
+    ~Cat();
 
     void makeSound() const;
     std::string getType() const;

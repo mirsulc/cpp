@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:41:54 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 11:51:13 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 15:21:06 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
     void makeSound() const;
     std::string getType() const;
     void getIdeas() const;
-    void setIdeas(unsigned int i, std::string idea);
+    void setIdeas(unsigned int i, std::string idea) const;
 private:
     Brain* _br;
 };

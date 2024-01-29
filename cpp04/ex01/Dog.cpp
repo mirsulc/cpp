@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:42:01 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 11:53:25 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 15:21:12 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Dog::getIdeas() const
 {
     _br->getIdeas();
 }
-void Dog::setIdeas(unsigned int i, std::string idea)
+void Dog::setIdeas(unsigned int i, std::string idea) const
 {
     _br->setIdeas(i, idea);
 }

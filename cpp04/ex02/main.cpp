@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:42:13 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 15:31:59 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 16:01:16 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 
 int main()
 {
-Animal Beast;
-Beast.makeSound();
-Beast.getIdeas();
+// Animal Beast;
+// Beast.makeSound();
+// Beast.getIdeas();
 std::cout << "---------------------------------------" << std::endl;
 Cat Micka;
 Micka.getType();
@@ -39,7 +39,7 @@ packa->makeSound();
 packa->setIdeas(1, "grrrrrr");
 packa->getIdeas();
 std::cout << "---------------------------------------" << std::endl;
-const Cat test_cat = *(const Cat*)packa;
+Cat test_cat = *(const Cat*)packa;
 test_cat.getType();
 std::cout << "---------------------------------------" << std::endl;
 std::cout << "test of 'test_cat' existence - address: " << &test_cat << " original address: " << &packa << std::endl;
@@ -57,36 +57,33 @@ std::cout << "---------------------------------------" << std::endl;
 std::cout << std::endl;
 std::cout << "adresa hafika: " << &Hafik << std::endl;
 const Animal *catsAndDogs[10];
-unsigned int number = 10;
-unsigned int i = 0;
+int number = 10;
+int i = 0;
 while(i < number)
 {
     while(i < number / 2)
     {
         catsAndDogs[i] = new Dog;
+        std::cout << "address of those beasts: " << i << " - " << &catsAndDogs[i] << std::endl;
         i++;
     }
     while(i < number)
     {
         catsAndDogs[i] = new Cat;
+        std::cout << "address of those beasts: " << i << " - " << &catsAndDogs[i] << std::endl;
         i++;
     }
-    std::cout << "address of those beasts: " << i << " - " << &catsAndDogs[i] << std::endl;
 }
 catsAndDogs[2]->getType();
 catsAndDogs[2]->getIdeas();
 catsAndDogs[8]->getType();
 catsAndDogs[8]->getIdeas();
-for (unsigned int x = 0; x < number; x++)
+for (int x = 0; x < number; x++)
 {
     delete(catsAndDogs[x]);
 }
 
 delete(Hafik);
-
-
-
-
 
 return 0;
 

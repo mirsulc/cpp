@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 09:42:06 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 15:21:17 by msulc            ###   ########.fr       */
+/*   Created: 2024/01/25 10:56:32 by msulc             #+#    #+#             */
+/*   Updated: 2024/01/25 11:08:59 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
-    Dog();
-    Dog(std::string tp);
-    Dog(const Dog &src);
-    Dog &operator=(const Dog &src);
-    ~Dog();
+    WrongCat();
+    WrongCat(std::string tp);
+    WrongCat(const WrongCat &src);
+    WrongCat &operator=(const WrongCat &src);
+    ~WrongCat();
 
     void makeSound() const;
     std::string getType() const;
-    void getIdeas() const;
-    void setIdeas(unsigned int i, std::string idea) const;
-private:
-    Brain* _br;
 };
-
-
-
-
-
-
-
-
-
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:41:39 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 15:31:03 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/26 15:58:19 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ public:
     Animal &operator=(const Animal &src);
     virtual ~Animal();
 
-    std::string getType() const;
+    virtual std::string getType() const = 0;
     void setType(std::string &tp);
-    virtual void makeSound() const; //virtual umozni predefinovat metodu v potomcich
-    virtual void getIdeas() const;
-    virtual void setIdeas(unsigned int i, std::string idea) const;
+    virtual void makeSound() const = 0;
+    virtual void getIdeas() const = 0;
+    
+    virtual void setIdeas(unsigned int i, std::string idea) const = 0;
 
 };
 
