@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:58:38 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/29 14:28:27 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/30 15:06:12 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ void Bureaucrat::incrementGrade(int points)
     else
     {
         _grade -= points;
-        std::cout << "The grade of Bureaucrat " << _name << " after increassing is " << _grade << ". He made it! Good boy :)" << std::endl;
+        std::cout << "The grade of Bureaucrat " << _name << " after increassing is " << _grade;
+        if(points > 0)
+            std::cout  << ". He made it! Good boy :)";
+        std::cout << std::endl;
     }
 }
 
@@ -98,7 +101,10 @@ void Bureaucrat::decrementGrade(int points)
     else
     {
         _grade += points;
-        std::cout << "The grade of Bureaucrat " << _name << " after decreassing is " << _grade << ". We feel sorry for him :(" << std::endl;
+        std::cout << "The grade of Bureaucrat " << _name << " after decreassing is " << _grade;
+        if(points > 0)
+            std::cout <<". We feel sorry for him :(";
+        std::cout << std::endl;;
     }
     
 }
@@ -112,4 +118,8 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 //--------------------------------------Overloaded Operator
 
-std::ostream &operator << (std::ostream& os, const Bureaucrat &bureaucrat);
+std::ostream& operator<<(std::ostream & os, const Bureaucrat & bureaucrat)
+{
+    os << "Bureaucrat " << bureaucrat.getName() << " has grade: " << bureaucrat.getGrade() << "." << std::endl;
+    return os;
+}

@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 09:05:46 by msulc             #+#    #+#              #
-#    Updated: 2024/01/29 11:30:37 by msulc            ###   ########.fr        #
+#    Updated: 2024/01/30 14:05:27 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME	=	bureaucrat
 
 CC	=	c++
 CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98 
+#the -Wshadow flag checks if we dont use variables of the same name
 
 SRC		=	main.cpp \
 			Bureaucrat.cpp

@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:00 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/29 14:29:32 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/30 15:12:55 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,76 @@
 int main(void)
 {
     Bureaucrat *Karl = new Bureaucrat;
-    std::cout << "Name of this bureaucrat is: " << Karl->getName() << std::endl;
+    std::cout << "1. Name of this bureaucrat is: " << Karl->getName() << " And his grade is: " << Karl->getGrade() << std::endl;
+    
     Bureaucrat *Josef = new Bureaucrat("Josef", 105);
-    std::cout << "Name of this bureaucrat is: " << Josef->getName() << std::endl;
-    Josef->incrementGrade(55);
+    std::cout << "2. Name of this bureaucrat is: " << Josef->getName() << " And his grade is: " << Josef->getGrade() << std::endl;
+    Josef->incrementGrade(5);
     Bureaucrat *Franz = new Bureaucrat;
-    *Franz = *Josef;
-    std::cout << "Name of this bureaucrat is: " << Franz->getName() << std::endl;
-    Franz->decrementGrade(50);
-
-    try
+    *Franz = *Josef; //the name is const, so we shouldn't be able to change it to Josef
+    std::cout << "3. Name of this bureaucrat is: " << Franz->getName() << " And his grade is: " << Franz->getGrade() << std::endl;
+    Franz->incrementGrade(50);
+    Bureaucrat Pavel(*Josef); //again, the name is const, so we shouldn't be able to change it to Josef
+    std::cout << "4. Name of this bureaucrat is: " << Pavel.getName() << " And his grade is: " << Pavel.getGrade() << std::endl;
+    std::cout << "------------------------------------ Test of Addresses ---------------------------------" <<std::endl;
+    //each bureaucrat should have different address
+    std::cout << "Addresses of our bureaucrats are: " << std::endl;
+    std::cout << &Karl << std::endl;
+    std::cout << &Josef << std::endl;
+    std::cout << &Franz << std::endl;
+    std::cout << &Pavel << std::endl;
+    std::cout << "------------------------------------ Test 1 ---------------------------------" <<std::endl;
+    try //the 3rd decrementation should fail, as the grade would be too low
     {
-        //Franz->incrementGrade(500);
         
-        Franz->decrementGrade(50);
-        Franz->decrementGrade(50);
-        Franz->decrementGrade(50);
+        Franz->decrementGrade(49);//the name is const, so we shouldn't be able to change it to Josef
+        Franz->decrementGrade(49);
+        Franz->decrementGrade(49);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-    catch(...)
-    {
-        
-    }
+    
     Franz->incrementGrade(50);
+    std::cout << "------------------------------------ Test 2 ---------------------------------" <<std::endl;
+    std::cout << "1. Name of this bureaucrat is: " << Karl->getName() << " And his grade is: " << Karl->getGrade() << std::endl;
+    std::cout << "2. Name of this bureaucrat is: " << Josef->getName() << " And his grade is: " << Josef->getGrade() << std::endl;
+    std::cout << "3. Name of this bureaucrat is: " << Franz->getName() << " And his grade is: " << Franz->getGrade() << std::endl;
+    std::cout << "4. Name of this bureaucrat is: " << Pavel.getName() << " And his grade is: " << Pavel.getGrade() << std::endl;
+    std::cout << "------------------------------------ Test 3 ---------------------------------" <<std::endl;
+    try //we shouldn't be able ti crate this guy, as his grade is too low
+    {
+        Bureaucrat *Test = new Bureaucrat("Test", 160);
+        Test->getName();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    std::cout << "------------------------------------ Test 4 ---------------------------------" <<std::endl;
+    try //we shouldn't be able ti crate this guy, as his grade is too high
+    {
+        Bureaucrat *Test1 = new Bureaucrat("Test1", 0);
+        Test1->getName();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    //delete(Test);
+    delete(Josef);
+    std::cout << "------------------------------------ Test 5 ---------------------------------" <<std::endl;
+    //after deleting Josef, we will check, if his copies are stil alive
+    std::cout << "Name of this FRANZ bureaucrat is: " << Franz->getName() << " And his grade is: " << Franz->getGrade() << std::endl;
+    std::cout << "Name of this PAVEL bureaucrat is: " << Pavel.getName() << " And his grade is: " << Pavel.getGrade() << std::endl;
+    std::cout << "------------------------------- Overloaded operator ------------------------------" << std::endl;
+    std::cout << Pavel; //was created on stack
+    std::cout << *Karl; //was created on heap
+    std::cout << *Franz; //was created on heap
+    std::cout << std::endl;
 
     delete(Karl);
     delete(Franz);
-    delete(Josef);
     return 0;
 }
