@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:22 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/31 10:25:54 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/31 14:04:24 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,20 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
+
+#define BOLD "\033[0;1m"
+#define RED "\033[0;91m"
+#define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define NRM "\033[0;39m"
+
+#define RADEK std::cout << std::endl;
 
 #define MAXGRADE 1
 #define MINGRADE 150
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,6 +48,7 @@ public:
     void incrementGrade(int points);
     void decrementGrade();
     void decrementGrade(int points);
+    void signForm(Form &form) const;    //added for ex01
 
     class GradeTooHighException : public std::exception {
         public:

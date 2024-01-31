@@ -6,11 +6,12 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:58:38 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/31 10:41:34 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/31 13:47:26 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 //----------------------------------Constructors & Destructors
 
@@ -107,6 +108,17 @@ void Bureaucrat::decrementGrade(int points)
         std::cout << std::endl;;
     }
     
+}
+
+void Bureaucrat::signForm(Form& form) const
+{
+    if(form.getSignGrade() < _grade)       // mel bych to predelat na try - catch   rovnou be signed bez if
+        throw GradeTooLowException();
+    else
+    {
+        form.beSigned(*this);
+        std::cout << "Bureaucrat: " << _name << " signed: " << form.getName() << std::endl;
+    }
 }
 
 //-------------------------------------Exceptions

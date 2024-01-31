@@ -35,6 +35,17 @@
         "cwctype": "cpp",
         "numbers": "cpp",
         "stdexcept": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "cstdarg": "cpp",
+        "array": "cpp",
+        "bit": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "iterator": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "ranges": "cpp",
+        "span": "cpp"
     }
 }
