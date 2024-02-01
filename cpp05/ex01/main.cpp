@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:00 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/31 15:48:02 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/01 09:27:49 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ int main(void)
     std::cout << Zadost;
 
     
-    RADEK
+    SP
     try
     {
-        Form Zadost2("Zadost2", 160, 0); //Should fail, as the Sign Grade is > 150
+        Form Zadost2("Zadost2", 160, 1); //Should fail, as the Sign Grade is > 150
         std::cout << Zadost2;
         
     }
@@ -103,12 +103,12 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    RADEK
+    SP
     std::cout << "--------------------------Creation of a B(bureaucrat)---------------" << std::endl;
     
     Bureaucrat Josef("Josef", 100);
     std::cout << Josef;
-    RADEK
+    SP
     std::cout << "--------------------------Lets have B to sign the F------------" << std::endl;
     try
     {
@@ -118,13 +118,13 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    RADEK
+    SP
     std::cout << "--------------------------Lets have B to sign another F------------" << std::endl;
     Form Pardon("Pardon", 150, 150);
     std::cout << Pardon;
     Pardon.beSigned(Josef);
     std::cout << Pardon; //status of Pardon shuld be changed
-    RADEK
+    SP
     try
     {
         std::cout << "-----------------------New F and a new B---------------------------" << std::endl;
@@ -132,7 +132,7 @@ int main(void)
         Bureaucrat Boss("Boss", 1);
         std::cout << Important;
         std::cout << Boss;
-        Boss.signForm(ImForm: test has sign grade: 1, execution garde: 1 and status: 1.portant);
+        Boss.signForm(Important);
         std::cout << Important;
         std::cout << Boss;
     }
@@ -141,13 +141,20 @@ int main(void)
         std::cerr << e.what() << '\n';
     }
     
-    RADEK
+    SP
     std::cout << "-----------------------Trying co create a pointer to a class instance---------------------------" << std::endl;
-    RADEK
+    SP
     Form Test("test", 1, 1);
     Form *ptr = &Test;
-    Bureaucrat John("John", 1);
-    John.signForm(*ptr);
+    Bureaucrat John("John", 2);
+    try
+    {
+        John.signForm(*ptr);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     std::cout << *ptr;
 
 

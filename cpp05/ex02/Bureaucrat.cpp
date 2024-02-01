@@ -6,12 +6,12 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:58:38 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/01 09:28:30 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/01 15:11:46 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 //----------------------------------Constructors & Destructors
 
@@ -110,15 +110,26 @@ void Bureaucrat::decrementGrade(int points)
     
 }
 
-void Bureaucrat::signForm(Form& form) const
+void Bureaucrat::signForm(AForm& aform) const
 {
-    if(form.getSignGrade() < _grade)       // mel bych to mozna predelat na try - catch   rovnou be signed bez if
+    if(aform.getSignGrade() < _grade)       // mel bych to mozna predelat na try - catch   rovnou be signed bez if
         throw GradeTooLowException();
     else
     {
-        form.beSigned(*this);
-        std::cout << "Bureaucrat: " << _name << " signed: " << form.getName() << std::endl;
+        aform.beSigned(*this);
+        std::cout << "Bureaucrat: " << _name << " signed: " << aform.getName() << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+    if(_grade > form.getExecuteGrade())
+        throw GradeTooHighException();
+    else if(form.getSignedStatus() == false)
+        throw HasNotBeenSignedException();
+    else
+        form.execute(*this);
+    
 }
 
 //-------------------------------------Exceptions
@@ -127,6 +138,9 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 {return BOLD "The grade is too high" NRM;}
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {return BOLD "The grade is too low" NRM;}
+const char* Bureaucrat::HasNotBeenSignedException::what() const throw()
+{return BOLD "The AForm has not been signed yet" NRM;}
+
 
 //--------------------------------------Overloaded Operator
 

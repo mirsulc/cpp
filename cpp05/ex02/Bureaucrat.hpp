@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:22 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/01 09:14:29 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/01 15:33:24 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Form.hpp"
+#include <fstream>
+#include "AForm.hpp"
+
 
 #define BOLD "\033[0;1m"
 #define RED "\033[0;91m"
@@ -28,7 +30,7 @@
 #define MAXGRADE 1
 #define MINGRADE 150
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -48,13 +50,18 @@ public:
     void incrementGrade(int points);
     void decrementGrade();
     void decrementGrade(int points);
-    void signForm(Form &form) const;    //added for ex01
+    void signForm(AForm &aform) const;    //added for ex01
+    void executeForm(AForm const & form); //added for ex02
 
     class GradeTooHighException : public std::exception {
         public:
             const virtual char* what() const throw();
     };
     class GradeTooLowException : public std::exception {
+        public:
+            const virtual char* what() const throw();
+    };
+    class HasNotBeenSignedException : public std::exception {
         public:
             const virtual char* what() const throw();
     };

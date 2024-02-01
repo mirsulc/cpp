@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:22:28 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/31 13:49:57 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/01 09:21:00 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ std::string Form::getName(void) const
 const char* Form::GradeTooHighException::what() const throw()
 {return BOLD "The grade of the Form is too high" NRM;}
 const char* Form::GradeTooLowException::what() const throw()
-{return BOLD "The grade is the Form is too low?" NRM;}
+{return BOLD "The grade is the Form is too low" NRM;}
 const char* Form::HasBeenSignedException::what() const throw()
 {return BOLD "The Form has already been signed" NRM;}
 

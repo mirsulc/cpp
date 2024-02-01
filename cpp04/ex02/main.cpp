@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:42:13 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/26 16:01:16 by msulc            ###   ########.fr       */
+/*   Updated: 2024/01/31 14:21:01 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 int main()
 {
 // Animal Beast;
-// Beast.makeSound();
-// Beast.getIdeas();
+// Beast->makeSound();
+
+Beast.getIdeas();
 std::cout << "---------------------------------------" << std::endl;
 Cat Micka;
 Micka.getType();
