@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:11:14 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/02 15:13:10 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/01 15:24:11 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ std::string RobotomyRequestForm::getTarget() const
 {
     return _target;
 }
+
 
 void RobotomyRequestForm::getInstancies() const{
 

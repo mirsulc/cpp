@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:00 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/01 15:31:26 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/02 15:09:12 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int main(void)
 {
     ShrubberyCreationForm scp1("targetttt");
     std::cout << scp1;
+    ShrubberyCreationForm ssss;
+    ssss = scp1;    //checking if assignment operator works
+    std::cout << &ssss << std::endl; //checking address
+    std::cout << &scp1 << std::endl; //checking address
     std::cout << "---------Creation of a B--------------" << std::endl;
-    Bureaucrat Jose("jose", 1);
+    Bureaucrat Jose("Jose", 1);
     try
     {
         Jose.signForm(scp1);    //Jose tries to sign the form

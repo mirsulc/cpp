@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 09:05:46 by msulc             #+#    #+#              #
-#    Updated: 2024/02/02 15:21:34 by msulc            ###   ########.fr        #
+#    Updated: 2024/02/02 10:14:29 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC		=	main.cpp \
 			AForm.cpp \
 			ShrubberyCreationForm.cpp \
 			PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp
+			RobotomyRequestForm.cpp \
+			Intern.cpp
 			
 
 OBJ		=	$(SRC:.cpp=.o)

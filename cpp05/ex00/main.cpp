@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:00 by msulc             #+#    #+#             */
-/*   Updated: 2024/01/31 10:12:25 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/02 14:51:41 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
     Bureaucrat Pavel(*Josef); //again, the name is const, so we shouldn't be able to change it to Pavel
     std::cout << "4. Name of this bureaucrat is: " << Pavel.getName() << " And his grade is: " << Pavel.getGrade() << std::endl;
     std::cout << "------------------------------------ Test of Addresses ---------------------------------" <<std::endl;
-    //each bureaucrat should have different address
+    //each bureaucrat should have a different address
     std::cout << "Addresses of our bureaucrats are: " << std::endl;
     std::cout << &Karl << std::endl;
     std::cout << &Josef << std::endl;
