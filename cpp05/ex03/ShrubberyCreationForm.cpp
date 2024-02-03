@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:47:34 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/02 13:46:56 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/03 10:01:33 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ void ShrubberyCreationForm::beExecuted(void) const
     const char *fileName = fName.c_str();
     std::fstream fs;
     fs.open (fileName, std::fstream::out);
-    fs << "     ccee88oo" <<std::endl
+    for (int i = 0; i < 2; i++)
+    {
+        fs << "     ccee88oo" <<std::endl
         << "  C8O8O8Q8PoOb o8oo" <<std::endl
         << " dOB69QO8PdUOpugoO9bD" <<std::endl
         << "CgggbU8OU qOp qOdoUOdcb" <<std::endl
@@ -63,6 +65,7 @@ void ShrubberyCreationForm::beExecuted(void) const
         << "         |||\\/" <<std::endl
         << "         |||||" <<std::endl
         << "   .....//||||\\...." <<std::endl;
+    }
     fs.close();
     std::cout << "A document '" << fName << "' was just created." << std::endl;
     

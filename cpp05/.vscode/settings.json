@@ -46,6 +46,7 @@
         "numeric": "cpp",
         "optional": "cpp",
         "ranges": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "fstream": "cpp"
     }
 }

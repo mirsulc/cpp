@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:11:51 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/01 15:44:17 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/03 10:23:04 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::beExecuted(void) const
 {
-    std::cout << "We'd like to inform '" << _target << "' that he has been pardoned by Zaphod Beeblebrox" << std::endl;
+    std::cout << "We'd like to inform '" << _target << "' that he/she has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 std::string PresidentialPardonForm::getTarget() const
 {
