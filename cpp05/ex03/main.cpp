@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:43:00 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/03 10:32:49 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/03 13:50:17 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int main(void)
         {
             std::cerr << e.what() << '\n';
         }
+        //delete f; //this is for the commented part of the Intern.cpp
     }
     return 0;
 }

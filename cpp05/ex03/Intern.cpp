@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 10:00:04 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/03 10:30:16 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/03 13:56:10 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,34 +57,37 @@ AForm* Intern::makeForm(std::string request, std::string target)
                     _form = new PresidentialPardonForm(target);
                     break;
             }
-            break;
+            return _form;
         }
         else
             continue;
     }
-        
-    // int req = 3;
-    // if(request == SC)
-    //     req = 0;
-    // else if(request == RO)
-    //     req = 1;
-    // else if(request == PP)
-    //     req = 2;
-
-    // switch (req)
-    // {
-    // case 0:
-    //     _form = new ShrubberyCreationForm(target);
-    //     break;
-    // case 1:
-    //     _form = new RobotomyRequestForm(target);
-    //     break;
-    // case 2:
-    //     _form = new PresidentialPardonForm(target);
-    //     break;
-    // default:
-    //     _form = NULL;
-    //     break;
-    // }
     return _form;
+    
+    // std::string requ[3] = {"shrubbery request", "robotomy request", "pardon request"};
+    // AForm* forms[3] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target), new PresidentialPardonForm(target)};
+    // for (int i = 0; i < 3; i++)
+    // {
+    //     if(request == requ[i])
+    //     {
+    //         for (int j = 0; j < 3; j++)
+    //         {
+    //            if(j != i)
+    //            {
+    //                delete forms[j];
+    //                forms[j] = NULL;
+    //            }
+    //         }
+    //         return forms[i];
+    //     } 
+    //     else
+    //         continue;
+    // }
+    // for (int x = 0; x < 3; x++)
+    // {
+    //     delete forms[x];
+    //     forms[x] = NULL;
+    // }
+    // AForm* pointer = NULL;
+    // return pointer;
 }
