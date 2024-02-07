@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 09:39:54 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/06 15:42:17 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/07 10:02:11 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ void ScalarConverter::printChar(std::string str)
 }
 void ScalarConverter::printInt(std::string str)
 {
-    long long num = std::atoll(str.c_str());
+    long long num = std::atoll(str.c_str());    //v pripade, ze ocekavam int, tak musim pouzit long long, abych overiv jestli se vejde do MIN/MAX int
+
     if(num >= 127 || num < 32)
         std::cout << "char: non-printable" << std::endl;
     else
@@ -86,10 +87,9 @@ void ScalarConverter::printInt(std::string str)
 }
 void ScalarConverter::printFloat(std::string str)
 {
-    std::cout << "Tisknu float" << std::endl;
     float f = std::atof(str.c_str());
-    std::cout << "ten float po prevodu: " << std::fixed << f << std::endl;
     double d = static_cast<double>(f);
+    
     if(f >= 127 || f < 32)
         std::cout << "char: non-printable" << std::endl;
     else
@@ -120,7 +120,6 @@ void ScalarConverter::printDouble(std::string str)
         std::cout << "int: impossible" << std::endl;
         std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
         std::cout << "double: " << std::fixed << std::setprecision(1) << d << "" << std::endl;
-
     }
     else
     {
@@ -152,7 +151,7 @@ void ScalarConverter::printError(std::string str)
     std::cout << "It's impossible to convert this string: '" << str << "'" << std::endl;
 }
 
-int ScalarConverter::checkType(std::string str)
+int ScalarConverter::checkType(std::string str) //zjistim typ
 {
     int dots = 0;
     int ef = 0;
@@ -165,7 +164,7 @@ int ScalarConverter::checkType(std::string str)
         || str == "nanf" || str == "-nanf" || str == "+nanf")
         return (NON);
 
-    for (unsigned long i = 0; i < str.length(); i++)
+    for (unsigned long i = 0; i < str.length(); i++)    //zjistim kolik je v retezci tecek, efek, minusu, plusu, cisel a ostatnich znaku
     {
         if(str[i] == '.')
             dots++;
@@ -198,10 +197,9 @@ int ScalarConverter::checkType(std::string str)
 
 void ScalarConverter::convert(std::string str)
 {
-    std::cout << "Jsme ve funkci convert" << std::endl;
-    int type = ScalarConverter::checkType(str);
-    std::cout << "typ je: " << type << std::endl;
-    switch (type)
+    int type = checkType(str);  //nejdrive zjistim typ, ktery je obsazen ve vstupnim retezci
+    
+    switch (type)               //podle typu zavolam prislusnou funkci
     {
     case 1:
         printChar(str);
@@ -222,5 +220,6 @@ void ScalarConverter::convert(std::string str)
         printError(str);
         break;
     }
-    
 }
+
+// funkce std::fixed a std::setprecision jsou z knihovny iomanip a ios, ktera umoznuje manipulovat s vystupem
