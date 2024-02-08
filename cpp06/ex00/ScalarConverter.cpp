@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 09:39:54 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/07 10:02:11 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/08 10:03:31 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &src)
     (void)src;
     return (*this);
 }
+
 bool ScalarConverter::digitsOnly(std::string str)
 {
     for(unsigned long i = 0; i < str.length(); i++)
@@ -40,6 +41,7 @@ bool ScalarConverter::digitsOnly(std::string str)
     }
     return (true);
 }
+
 bool ScalarConverter::digitsOnly(std::string str, int start, int end)
 {
     for(int i = start; i < end; i++)
@@ -60,6 +62,7 @@ void ScalarConverter::printChar(std::string str)
     std::cout << "float: " << static_cast<float>(str[0]) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(str[0]) << ".0" << std::endl;
 }
+
 void ScalarConverter::printInt(std::string str)
 {
     long long num = std::atoll(str.c_str());    //v pripade, ze ocekavam int, tak musim pouzit long long, abych overiv jestli se vejde do MIN/MAX int
@@ -85,6 +88,7 @@ void ScalarConverter::printInt(std::string str)
     }
     
 }
+
 void ScalarConverter::printFloat(std::string str)
 {
     float f = std::atof(str.c_str());
@@ -107,6 +111,7 @@ void ScalarConverter::printFloat(std::string str)
         std::cout << "double: " << std::fixed << std::setprecision(1) << d << "" << std::endl;
     }
 }
+
 void ScalarConverter::printDouble(std::string str)
 {
     double d = std::atof(str.c_str());
@@ -128,6 +133,7 @@ void ScalarConverter::printDouble(std::string str)
         std::cout << "double: " << std::fixed << std::setprecision(1) << d << "" << std::endl;
     }
 }
+
 void ScalarConverter::printNon(std::string str)
 {
     std::cout << "tisknu non: " << str << std::endl;
@@ -140,12 +146,17 @@ void ScalarConverter::printNon(std::string str)
         std::cout << "float: " << str << "f" << std::endl;
         std::cout << "double: " << str << std::endl;
     }
+    else if(str == "nanf" || str == "inff")
+    {
+        std::cout << "float: " << str << std::endl;
+        std::cout << "double: " << str.erase(3,4) << std::endl;}
     else
     {
         std::cout << "float: " << str << std::endl;
         std::cout << "double: " << str.erase(4,5) << std::endl;
     }
 }
+
 void ScalarConverter::printError(std::string str)
 {
     std::cout << "It's impossible to convert this string: '" << str << "'" << std::endl;

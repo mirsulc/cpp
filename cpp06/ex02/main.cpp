@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:53:32 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/07 15:49:12 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/08 09:44:38 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 int main()
 {
-    Base *base = generate();
-    // Base *a = new A;
-    // Base *b = new B;
-    // Base *c = new C;
-    
-    std::cout << "Pointer: " << base << std::endl;
+    Base *ptr = generate();
+    Base &ref = *ptr;
+    SP
+    std::cout << "Pointer address: " << ptr << std::endl;
+    SP
+    identify(ptr);
+    SP
+    identify(ref);
 
-    identify(base);
-
     
-    delete base;
+    delete ptr;
     return (0);
 }
