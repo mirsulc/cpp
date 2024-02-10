@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 09:39:54 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/08 10:03:31 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/10 09:50:24 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,39 @@ void ScalarConverter::printFloat(std::string str)
     }
 }
 
+// void ScalarConverter::printFloat(std::string str) //tato funkce je pro testovani pristupu k prevodu floatu
+// {
+//     float f = std::atof(str.c_str());
+//     double d = std::atof(str.c_str());
+        
+//     if(f >= 127 || f < 32)
+//         std::cout << "char: non-printable" << std::endl;
+//     else
+//         std::cout << "char: '" << static_cast<unsigned char>(f) << "'" <<std::endl;
+//     long long test = static_cast<long long>(std::numeric_limits<float>::max());
+//     long long test1 = static_cast<long long>(std::numeric_limits<float>::min());
+//     std::cout << "max float: " << test  << std::endl;
+//     std::cout << "min float: " << test1  << std::endl;
+//     if(d > std::numeric_limits<float>::max() || d < std::numeric_limits<float>::min())
+//     {
+//         std::cout << "int: impossible" << std::endl;
+//         std::cout << "float: too high/low float number" << std::endl;
+//         std::cout << "double: impossible" << std::endl;
+//     }
+//     else if(d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min())
+//     {
+//         std::cout << "int: impossible" << std::endl;
+//         std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+//         std::cout << "double: " << std::fixed << std::setprecision(1) << d << "" << std::endl;
+//     }
+//     else
+//     {
+//         std::cout << "int: " << static_cast<int>(f) << std::endl;
+//         std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+//         std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(f) << "" << std::endl;
+//     }
+// }
+
 void ScalarConverter::printDouble(std::string str)
 {
     double d = std::atof(str.c_str());
@@ -120,7 +153,7 @@ void ScalarConverter::printDouble(std::string str)
         std::cout << "char: non-printable" << std::endl;
     else
         std::cout << "char: '" << static_cast<unsigned char>(d) << "'" <<std::endl;
-    if(f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min())
+    if(d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min())
     {
         std::cout << "int: impossible" << std::endl;
         std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
@@ -128,7 +161,7 @@ void ScalarConverter::printDouble(std::string str)
     }
     else
     {
-        std::cout << "int: " << static_cast<int>(f) << std::endl;
+        std::cout << "int: " << static_cast<int>(d) << std::endl;
         std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
         std::cout << "double: " << std::fixed << std::setprecision(1) << d << "" << std::endl;
     }
