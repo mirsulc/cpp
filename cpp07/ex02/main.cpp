@@ -1,55 +1,118 @@
-#include <iostream>
 #include <Array.hpp>
 
-#define MAX_VAL 750
+#define MAX_VAL 50
+
+
+
 int main(int, char**)
 {
+    // std::string l = "sentence";
+    // std::ostringstream p;
+    // Array<std::string> sentence(10);
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     p << i;
+    //     sentence[i] = l + p.str();
+    // }
+    // for (size_t i = 0; i < 10; i++)
+    // {
+    //     std::cout << sentence[i] << std::endl;
+    // }
+    
+    // Array<int> numbers(MAX_VAL);
+    // std::cout << numbers.size() << std::endl;
+    // int* mirror = new int[MAX_VAL];
+    // SP
+   
+    // std::cout << "address of mirror: " << BOLD << mirror << NRM << std::endl;
+    // std::cout << "address of mirror[0]: " << BOLD << &mirror[0] << NRM << " they should be the same..." << std::endl;
+    // SP
+    // srand(time(NULL));
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     const int value = rand()%60;
+    //     numbers[i] = value;
+    //     mirror[i] = value;
+    // }
+    // for (size_t i = 0; i < MAX_VAL; i++)
+    // {
+    //     std::cout << numbers[i] << " ";
+    //     std::cout << BOLD << mirror[i] << NRM << std::endl;
+    // }
+    
+    // std::cout << "size of numbers: " << numbers.size() << std::endl; 
+    // SP
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     if (mirror[i] != numbers[i])
+    //     {
+    //         std::cerr << "diday<int> numbers(MAX_VAL)n't save the same value!!" << std::endl;
+    //         return 1;
+    //     }
+    // }
+    // try
+    // {
+    //     numbers[-2] = 0;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    // try
+    // {
+    //     numbers[MAX_VAL] = 0;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     numbers[i] = rand();
+    // }
+    // delete [] mirror;
+    SP
     Array<int> numbers(MAX_VAL);
-    // Array<int> numbers;
-    // Array<int> numbers = new Array();
-    int* mirror = new int[MAX_VAL];
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
+        numbers[i] = rand()%(MAX_VAL + 1);
     }
-    //SCOPE
+    numbers.print();
+    SP
+    Array<std::string> lines(MAX_VAL);
+    std::ostringstream ad;
+    std::string st = "string";
+    for (size_t i = 0; i < MAX_VAL; i++)
     {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
+        ad << i;
+        lines[i] = st + ad.str();
+        ad.str("");
     }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
+    lines.print();
+    Array<float> fl;
     try
     {
-        numbers[-2] = 0;
+        std::cout << fl[1] << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    try
+    Array<float> fl1(MAX_VAL);
+    for (size_t i = 0; i < MAX_VAL; i++)
     {
-        numbers[MAX_VAL] = 0;
+        fl1[i] = static_cast<float>(numbers[i]);
     }
-    catch(const std::exception& e)
+    fl1.print();
+    Array<char> s(MAX_VAL);
+    for (size_t i = 0; i < MAX_VAL; i++)
     {
-        std::cerr << e.what() << '\n';
+        s[i] = 33 + i;
     }
+    s.print();
+    
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
     return 0;
 }
