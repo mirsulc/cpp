@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 11:26:48 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/09 14:11:23 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/13 09:41:57 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int main()
     SP
     //---------------------------------------------------------------
     std::cout << " - Now tests with BOLD function - " << std::endl; //v teto casti posilame do funkce iter ruzne pole a stejnou podfunkci
+    ::iter(Arr, arrLen, ::printBold);
+    SP
+    ::iter(Arr, arrLen, ::multiply);
+    SP
     ::iter(Arr, arrLen, ::printBold);
     SP
     ::iter(Arr2, arrLen, ::printBold);

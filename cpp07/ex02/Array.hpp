@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 10:40:15 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/12 15:15:44 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/13 09:19:37 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Array
             for (unsigned int i = 0; i < _size; i++)
                 _array[i] = src._array[i];
         }
-        ~Array(){std::cout<< "destruction" <<std::endl; delete[] _array;}
+        ~Array(){delete[] _array;}
         Array &operator=(Array const &src)
         {
             if (this != &src)
@@ -57,6 +57,11 @@ class Array
         }
         unsigned int size() const {return _size;}
         void print(void)const{
+            if(_size == 0)
+            {
+                std::cout << "Array is empty" << std::endl;
+                return;
+            }
             for(unsigned int i = 0; i < _size; i++)
             {
                 std::cout << _array[i] << ", ";

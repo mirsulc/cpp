@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 09:18:59 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/09 14:13:36 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/13 09:40:39 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ template <typename T>
 void multiplyByTwo(T const &i)
 {
     std::cout << i * 2 << std::endl;
+}
+
+template <typename T>
+void multiply(T &i)
+{
+    i *= 2;   
 }
 
 template <typename T>

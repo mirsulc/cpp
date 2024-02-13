@@ -91,6 +91,7 @@ int main(int, char**)
         ad.str("");
     }
     lines.print();
+    SP
     Array<float> fl;
     try
     {
@@ -100,19 +101,22 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
-    Array<float> fl1(MAX_VAL);
+    SP
+    Array<double> fl1(MAX_VAL);
     for (size_t i = 0; i < MAX_VAL; i++)
     {
-        fl1[i] = static_cast<float>(numbers[i]);
+        fl1[i] = static_cast<double>(numbers[i]);
     }
     fl1.print();
+    SP
     Array<char> s(MAX_VAL);
     for (size_t i = 0; i < MAX_VAL; i++)
     {
         s[i] = 33 + i;
     }
     s.print();
-    
-
+    SP
+    Array<long long> ll;
+    ll.print();
     return 0;
 }
