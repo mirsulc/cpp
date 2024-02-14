@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 10:19:16 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/14 13:32:32 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/14 13:49:24 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
+    //------------------------------------------
+    SP
+    //viktor.clear(); //vymaze vsechny prvky vectoru
+    viktor.erase(viktor.begin(), viktor.begin() + 10); //vymaze prvnich 10 prvku
+    print(viktor);
     SP
     std::string numbers[5] = {"one", "two", "three", "four", "five"};
     std::vector<std::string> viktor2;
@@ -65,9 +70,5 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    
-
-
-   
-
+    return 0;
 }
