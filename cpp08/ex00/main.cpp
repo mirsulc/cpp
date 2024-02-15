@@ -6,13 +6,13 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 10:19:16 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/14 13:49:24 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/15 11:33:17 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
-#define NUM 50
+#define NUM 20
 
 int main(void)
 {
@@ -22,7 +22,7 @@ int main(void)
     std::deque<int> quin;
     for (int i = 0; i < NUM; i++)
     {
-        int ran = std::rand() % 6;
+        int ran = std::rand() % 20;
         viktor.push_back(ran);
         lisa.push_front(ran);
         quin.push_back(ran);
@@ -31,6 +31,11 @@ int main(void)
     print(viktor);
     print(lisa);
     print(quin);
+    SP
+    std::sort(viktor.begin(), viktor.end());
+    std::cout << "Sorted viktor:" << std::endl;
+    print(viktor);
+    SP
     try
     {
         easyfind(viktor, 5);
@@ -41,11 +46,7 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    //------------------------------------------
-    SP
-    //viktor.clear(); //vymaze vsechny prvky vectoru
-    viktor.erase(viktor.begin(), viktor.begin() + 10); //vymaze prvnich 10 prvku
-    print(viktor);
+    //------------------------------------------------------------------------------------
     SP
     std::string numbers[5] = {"one", "two", "three", "four", "five"};
     std::vector<std::string> viktor2;

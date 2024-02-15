@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 10:00:03 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/14 13:28:59 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/15 11:26:42 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 #include <iostream> 
 #include <string>
 #include <algorithm>
+#include <iterator>
 #include <vector>
 #include <list>
 #include <deque>
 #include <ctime>
+#include <numeric>
 
 #define SP std::cout << std::endl;
 
@@ -44,8 +46,6 @@ int easyfind(T &container, O value)
         throw NotFoundException();
 }
 
-#include <deque>
-
 template <typename T>
 void print(T &container)
 {
@@ -53,6 +53,5 @@ void print(T &container)
         std::cout << *it << " ";
     std::cout << std::endl;
 }
-
 
 #endif
