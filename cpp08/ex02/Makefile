@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 09:05:46 by msulc             #+#    #+#              #
-#    Updated: 2024/02/19 10:05:39 by msulc            ###   ########.fr        #
+#    Updated: 2024/02/19 10:05:46 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,13 @@ GREEN =	\033[32m
 RED =	\033[31m
 NC =	\033[0m
 
-NAME	=	mutant
+NAME	=	span
 
 CC	=	c++
 CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98 
 #the -Wshadow flag checks if we dont use variables of the same name
 
 SRC		=	main.cpp \
-			Span.cpp
 						
 			
 
@@ -46,7 +45,7 @@ $(NAME): $(OBJ)
 	@echo "\033[1J\033[1;1H"
 	@echo "$(BOLD)Program is ready!$(NC)"
 	@sleep 0.5
-	@echo "$(BOLD)Just type: ./mutant $(NC)"
+	@echo "$(BOLD)Just type: ./span $(NC)"
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
