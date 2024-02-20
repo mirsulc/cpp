@@ -15,7 +15,7 @@ GREEN =	\033[32m
 RED =	\033[31m
 NC =	\033[0m
 
-NAME	=	span
+NAME	=	mutant
 
 CC	=	c++
 CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98 
@@ -45,7 +45,7 @@ $(NAME): $(OBJ)
 	@echo "\033[1J\033[1;1H"
 	@echo "$(BOLD)Program is ready!$(NC)"
 	@sleep 0.5
-	@echo "$(BOLD)Just type: ./span $(NC)"
+	@echo "$(BOLD)Just type: ./mutant $(NC)"
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@ -I .
