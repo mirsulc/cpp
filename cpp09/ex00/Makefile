@@ -6,7 +6,7 @@
 #    By: msulc <msulc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/23 09:05:46 by msulc             #+#    #+#              #
-#    Updated: 2024/02/19 10:05:46 by msulc            ###   ########.fr        #
+#    Updated: 2024/02/20 15:16:01 by msulc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CFLAGS	=	-Werror -Wextra -Wall -Wshadow -std=c++98
 #the -Wshadow flag checks if we dont use variables of the same name
 
 SRC		=	main.cpp \
+			BitcoinExchange.cpp
 						
 			
 
