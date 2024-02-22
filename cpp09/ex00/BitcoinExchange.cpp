@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:54:41 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/22 12:46:03 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/22 14:44:29 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,21 @@ BitcoinExchange::~BitcoinExchange()
 {
 }
 
+// tato funkce precadi datum zadane v urcenem formatu na int pro ucely porovnavani ve funkci 'procesIt'
+// static int dateToInt(std::string date)
+// {
+//     date.erase (std::remove(date.begin(), date.end(), '-'), date.end());
+//     return std::atoi(date.c_str());
+// }
+
 static std::string getDate(std::string line, char c)
 {
     std::size_t pos = line.find(c);
     if((pos != 10 && c == ',') || (pos != 11 && c == '|'))
-    {
         throw std::invalid_argument("------------------Invalid date format.");
-    }
     if(c == '|')
         pos--;
     std::string date = line.substr(0, pos);
-    
-    //std::cout << "date: -------" <<  date << "-----" << std::endl;
     if(c == '|')
         checkDate(date);
     return date;
@@ -134,16 +137,40 @@ int dataControl(std::string line, BitcoinExchange exchange)
     std::stringstream ss(line.substr(found + 1));
     double amount;
     ss >> amount;
-    
+    //std::cout << "------------------------Amount: " << amount << std::endl;
     if(amount < 0 || amount > 1000)
     {
-        std::cout << "The number is out of expected range. => " << line;
+        std::cout << "The number is out of expected range (0 - 1000). => " << line;
         throw std::invalid_argument("");
     }
     exchange.procesIt(date, amount);
     return 1;
 }
+// tato verze funkce porovnava datumy ve forme int a je tak predpokladam :
+// void BitcoinExchange::procesIt(std::string date, double amount)
+// {
+//     std::map<std::string, double>::iterator it = _prizeMap.begin();
+   
+//     std::advance(it, 1);
+//     while(it != _prizeMap.end())
+//     {
+//         if(dateToInt(it->first) == dateToInt(date))
+//         {
+//             std::cout << date << " => " << amount << " = " << it->second * amount << std::endl;
+//             return;
+//         }
+//         else if(dateToInt(it->first) > dateToInt(date) && date != "2009-01-01")
+//         {
+//             it--;
+//             std::cout << date << " => " << amount << " = " << it->second * amount << std::endl;
+//             return;
+//         }
+//         it++;
+//     }
+//     std::cout<< "Valid date not found." << std::endl;
+// }
 
+// tato verze funkce porovnava datumy ve forme stringu a je tak predpokladam rychlejsi:
 void BitcoinExchange::procesIt(std::string date, double amount)
 {
     std::map<std::string, double>::iterator it = _prizeMap.begin();

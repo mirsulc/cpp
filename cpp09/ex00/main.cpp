@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:13:58 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/22 12:59:11 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/22 14:47:30 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 int main(int argc, char **argv)
 {
     if(argc != 2)
-    {
-        std::cout << "wrong number of arguments." << std::endl;
-        return 1;
-    }
+        return(std::cout << "Wrong number of arguments." << std::endl, 1);
     
     BitcoinExchange exchange;
     std::ifstream source;
