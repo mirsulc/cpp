@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 09:13:58 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/21 15:04:45 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:59:11 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ int main(int argc, char **argv)
     }
     
     BitcoinExchange exchange;
-    std::string filename = "data.csv";
     std::ifstream source;
     std::string line;
     
     source.open(argv[1]);
     if(!source.is_open() || !source.good())
         return (std::cout << "Input file not found." << std::endl, 1);
-    if(!exchange.fillContainer(filename))
+    if(!exchange.fillContainer("data.csv"))
         return 1;
     while(getline(source, line))
     {

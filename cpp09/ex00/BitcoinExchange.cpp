@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:54:41 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/21 15:29:07 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:46:03 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,30 @@ BitcoinExchange::~BitcoinExchange()
 {
 }
 
+static std::string getDate(std::string line, char c)
+{
+    std::size_t pos = line.find(c);
+    if((pos != 10 && c == ',') || (pos != 11 && c == '|'))
+    {
+        throw std::invalid_argument("------------------Invalid date format.");
+    }
+    if(c == '|')
+        pos--;
+    std::string date = line.substr(0, pos);
+    
+    //std::cout << "date: -------" <<  date << "-----" << std::endl;
+    if(c == '|')
+        checkDate(date);
+    return date;
+}
+
+static double getPrize(std::string line)
+{
+    std::size_t pos = line.find(",");
+    double prize = std::atof(line.substr(pos + 1).c_str());
+    return prize;
+}
+
 bool BitcoinExchange::fillContainer(std::string filename)
 {
     std::ifstream fileName;
@@ -47,11 +71,13 @@ bool BitcoinExchange::fillContainer(std::string filename)
         std::cout << "Source data file not found." << std::endl;
         return(false);
     }
+    getline(fileName, line);
     while(std::getline(fileName, line))
     {
+    
         try
         {
-        _prizeMap.insert(std::pair<std::string, double>(getDate(line), getPrize(line)));
+        _prizeMap.insert(std::pair<std::string, double>(getDate(line, ','), getPrize(line)));
         }
         catch(const std::exception& e)
         {
@@ -60,24 +86,6 @@ bool BitcoinExchange::fillContainer(std::string filename)
     }
     fileName.close();
     return true;
-}
-
-std::string getDate(std::string line)
-{
-    std::size_t pos = line.find(",");
-    if(pos == line.npos && line != "date,exchange_rate")
-    {
-        throw std::invalid_argument("------------------Invalid line format in data.csv file.");
-    }
-    std::string date = line.substr(0, pos);
-    return date;
-}
-
-double getPrize(std::string line)
-{
-    std::size_t pos = line.find(",");
-    double prize = std::atof(line.substr(pos + 1).c_str());
-    return prize;
 }
 
 void checkDate(std::string date)
@@ -103,7 +111,6 @@ void checkDate(std::string date)
     return;
 }
 
-
 int dataControl(std::string line, BitcoinExchange exchange)
 {
     if(line == "date | value")
@@ -117,30 +124,28 @@ int dataControl(std::string line, BitcoinExchange exchange)
     if (found == std::string::npos)
         throw std::invalid_argument("Invalid line format.");
 
-    std::string date = line.substr(0, found - 1);
-    if(date.length() != 10)
-        throw std::invalid_argument("Invalid line/date format.");
+    std::string date = getDate(line, '|');
     
-    checkDate(date);
+    // std::string date = line.substr(0, found - 1);
+    // if(date.length() != 10)
+    //     throw std::invalid_argument("Invalid line/date format.");
+    
+    // checkDate(date);
     std::stringstream ss(line.substr(found + 1));
     double amount;
     ss >> amount;
     
     if(amount < 0 || amount > 1000)
     {
-        std::cout << std::fixed << std::setprecision(0);
         std::cout << "The number is out of expected range. => " << line;
         throw std::invalid_argument("");
     }
-
     exchange.procesIt(date, amount);
-
     return 1;
 }
 
 void BitcoinExchange::procesIt(std::string date, double amount)
 {
-
     std::map<std::string, double>::iterator it = _prizeMap.begin();
    
     std::advance(it, 1);

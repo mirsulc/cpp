@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:39:37 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/21 11:27:03 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/22 10:49:45 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ public:
     void procesIt(std::string date, double amount);
 };
 
-std::string getDate(std::string line);
-double getPrize(std::string line);
+//std::string getDate(std::string line);
+//double getPrize(std::string line);
 int dataControl(std::string line, BitcoinExchange exchange);
 void checkDate(std::string date);
 
