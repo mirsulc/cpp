@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 09:12:24 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/28 12:53:24 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/28 13:30:27 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,8 @@ public:
     RPN &operator=(RPN const &src);
     ~RPN();
     
-    static bool checkInput(std::string str);
     void count(std::string str);
     
 };
-
-
-
-
 
 #endif
