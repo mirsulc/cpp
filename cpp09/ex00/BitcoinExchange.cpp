@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:54:41 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/22 14:44:29 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/28 08:41:05 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ int dataControl(std::string line, BitcoinExchange exchange)
     exchange.procesIt(date, amount);
     return 1;
 }
-// tato verze funkce porovnava datumy ve forme int a je tak predpokladam :
+// tato verze funkce porovnava datumy ve forme int a je tak predpokladam pomalejsi:
 // void BitcoinExchange::procesIt(std::string date, double amount)
 // {
 //     std::map<std::string, double>::iterator it = _prizeMap.begin();
