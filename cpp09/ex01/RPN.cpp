@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:11:05 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/29 17:24:29 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:35:26 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void RPN::count(std::string str)
     double num2;
     double result;
 
+    while(!_stack1.empty())
+        _stack1.pop();
     std::cout << std::fixed << std::setprecision(1);
     unsigned long i = 0;
     for (i = 0; i < str.length(); i++)
@@ -46,11 +48,6 @@ void RPN::count(std::string str)
             continue;
         else if (str[i] >= 48 && str[i] <= 57)
             _stack1.push(str[i] - 48);
-        // else if(_stack1.size() == 1 && (str[i] < 48 || str[i] > 57))
-        // {
-        //     std::cout << "This notation is not valid 3" << std::endl;
-        //     return;
-        // }
         else if(_stack1.size() > 1)
         {
             num1 = _stack1.top();

@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:28:43 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/29 17:11:03 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:29:38 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
     if (argc != 2)
         return(std::cout << "Error: wrong number of argumens" << std::endl, 1);
     RPN rpn;
+    std::string line;
+    std::ifstream input("test.txt");
     if(std::string(argv[1]) == "test.txt")
     {
-        std::string line;
-        std::ifstream input("test.txt");
         while(getline(input, line))
         {
             std::cout << line << " = ";
