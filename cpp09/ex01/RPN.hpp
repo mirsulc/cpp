@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 09:12:24 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/28 13:30:27 by msulc            ###   ########.fr       */
+/*   Updated: 2024/02/29 16:33:35 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define RPN_HPP
 
 #include <iostream>
+#include <sstream>
+#include <fstream>
 #include <stack>
 #include <string>
 #include <exception>
