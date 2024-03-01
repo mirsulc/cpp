@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 09:12:24 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/29 16:33:35 by msulc            ###   ########.fr       */
+/*   Updated: 2024/03/01 11:37:54 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #include <fstream>
 #include <stack>
 #include <string>
-#include <exception>
 #include <cstdlib>
 #include <iomanip>
 

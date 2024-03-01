@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:11:05 by msulc             #+#    #+#             */
-/*   Updated: 2024/02/29 20:35:26 by msulc            ###   ########.fr       */
+/*   Updated: 2024/03/01 11:42:41 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ RPN::RPN()
 }
 RPN::RPN(RPN const &src)
 {
-    std::cout << "copy" << std::endl;
     *this = src;
 }
 RPN &RPN::operator=(RPN const &src)
 {
-    std::cout << "we shouldnt be here" << std::endl;
     if (this != &src)
     {
         _stack1 = src._stack1;
@@ -41,8 +39,7 @@ void RPN::count(std::string str)
     while(!_stack1.empty())
         _stack1.pop();
     std::cout << std::fixed << std::setprecision(1);
-    unsigned long i = 0;
-    for (i = 0; i < str.length(); i++)
+    for (unsigned long i = 0; i < str.length(); i++)
     {
         if(str[i] == 32)
             continue;
@@ -74,34 +71,16 @@ void RPN::count(std::string str)
                 result = num2 / num1;
                 break;
             }
-            // altternativa k verzi swich vyse
-            // if (str[i] == '+')
-            //     result = num2 + num1;
-            // else if (str[i] == '-')
-            //     result = num2 - num1;
-            // else if (str[i] == '*')
-            //     result = num2 * num1;
-            // else if (str[i] == '/')
-            // {
-            //     if(num1 == 0)
-            //     {
-            //         std::cout << "Error: division by zero" << std::endl;
-            //         return;
-            //     }
-            //     result = num2 / num1;
-            // }
             _stack1.push(result);
         }
         else
         {
-            std::cout << "This notation is not valid 1" << std::endl;
+            std::cout << "This notation is not valid" << std::endl;
             return;
         }
     }
-    if((_stack1.size() == 1 || _stack1.top() == 0) && i == str.length())
+    if(_stack1.size() == 1)
            std::cout << _stack1.top() << std::endl;
     else
-        std::cout << "This notation is not valid 2" << std::endl;
-    while(!_stack1.empty())
-        _stack1.pop();
+        std::cout << "This notation is not valid" << std::endl;
 }
