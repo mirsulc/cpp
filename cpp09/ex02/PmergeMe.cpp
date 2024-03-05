@@ -6,7 +6,7 @@
 /*   By: msulc <msulc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:11:53 by msulc             #+#    #+#             */
-/*   Updated: 2024/03/05 10:08:16 by msulc            ###   ########.fr       */
+/*   Updated: 2024/03/05 13:59:56 by msulc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ PmergeMe::PmergeMe(int argc, char *argv[])
         _vec.push_back(std::atoi(argv[i]));
         _list.push_back(std::atoi(argv[i]));
     }
-    std::cout << "Before: ";
+    std::cout << std::left << std::setw(8) << "Before: ";
     std::vector<int>::iterator it = _vec.begin();
     while(it != _vec.end())
     {
@@ -59,15 +59,14 @@ PmergeMe::PmergeMe(int argc, char *argv[])
     start_list = clock();
     mergeSortList(_list);
     end_list = clock();
-    std::cout << std::fixed;
-    std::cout << "After: ";
+    std::cout << std::left << std::setw(8) << "After: ";
     it = _vec.begin();
     while(it != _vec.end())
     {
         std::cout << *it << " ";
         it++;
     }
-    std::cout << std::endl;
+    std::cout << std::fixed << std::endl;
     std::cout << "Time to process a range of: " << _vec.size() << " elements with std::vector : " 
             << 1000 * ((double)(end_vec - start_vec) / CLOCKS_PER_SEC) <<" ms" << std::endl;
     std::cout << "Time to process a range of: " << _list.size() << " elements with std::list : "
@@ -93,18 +92,7 @@ PmergeMe::~PmergeMe()
 {
 }
 
-//--------------------------------------------------------------------------------------------
-
-void PmergeMe::mergeList(std::list<int> &list)
-{
-    list.sort();
-    std::list<int>::iterator it = list.begin();
-    while(it != list.end())
-    {
-        std::cout << *it << " ";
-        it++;
-    }
-}
+//-------------------------------------------------------------------------------------------------
 
 void PmergeMe::mergeVector(std::vector<int> &left, std::vector<int> &right, std::vector<int> &results)
 {
@@ -132,33 +120,6 @@ void PmergeMe::mergeVector(std::vector<int> &left, std::vector<int> &right, std:
         results[i] = right[k];
         k++; i++;
     }
-
-    // std::vector<int>::iterator it_left = left.begin();
-    // std::vector<int>::iterator it_right = right.begin();
-    // results.clear();
-    // while(it_left != left.end() && it_right != right.end())
-    // {
-    //     if(*it_left < *it_right)
-    //     {
-    //         results.push_back(*it_left);
-    //         it_left++;
-    //     }
-    //     else
-    //     {
-    //         results.push_back(*it_right);
-    //         it_right++;
-    //     }
-    // }
-    // while(it_left != left.end())
-    // {
-    //     results.push_back(*it_left);
-    //     it_left++;
-    // }
-    // while(it_right != right.end())
-    // {
-    //     results.push_back(*it_right);
-    //     it_right++;
-    // }
 }
 void PmergeMe::mergeSortVector(std::vector<int> &vec)
 {
@@ -207,7 +168,7 @@ void PmergeMe::mergeList(std::list<int> &left, std::list<int> &right, std::list<
 void PmergeMe::mergeSortList(std::list<int> &list)
 {
     if(list.size() <= 1)
-        return; 
+        return;
     
     std::list<int> left, right;
     std::list<int>::iterator it = list.begin();
